@@ -5,10 +5,24 @@ import Home from './client/components/Home';
 
 const app = express();
 
+// treat public directory to outside world
+app.use(express.static('public'));
+
+// script will look at static directory and search for bundle.js file
 app.get('/', (req, res) => {
   const content = renderToString(<Home />);
 
-  res.send(content)
+  const html = `
+    <html>
+      <head></head>
+      <body>
+        <div>${content}</div>
+        <script src="bundle.js"></script>
+      </body>
+    </html>
+  `;
+
+  res.send(html)
 });
 
 app.listen(3000, () => {
