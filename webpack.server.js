@@ -18,7 +18,7 @@ module.exports = {
     rules: [
       {
         test: /\.js?$/,
-        loader: 'babel-loder',
+        loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
           presets: [
