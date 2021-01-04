@@ -1037,7 +1037,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.hydrate(_react2.default.createElement(
   _reactRouterDom.BrowserRouter,
   null,
-  _react2.default.createElement(Route, null)
+  _react2.default.createElement(_Routes2.default, null)
 ), document.querySelector('#root'));
 
 /***/ }),

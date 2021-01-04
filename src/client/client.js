@@ -6,7 +6,7 @@ import Routes from './Routes';
 
 ReactDOM.hydrate(
   <BrowserRouter>
-    <Route />
+    <Routes />
   </BrowserRouter>, 
 document.querySelector('#root'));
 
