@@ -1,5 +1,6 @@
 import express from 'express';
 import renderer from './helpers/renderer';
+import createStore from './helpers/createStore';
 
 const app = express();
 
@@ -8,7 +9,11 @@ app.use(express.static('public'));
 
 // script will look at static directory and search for bundle.js file
 app.get('*', (req, res) => {
-  res.send(renderer(req));
+  const store = createStore();
+
+  // Some logic to initialize and load data into the store
+
+  res.send(renderer(req, store));
 });
 
 app.listen(3000, () => {
