@@ -37779,8 +37779,8 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
-var loadData = function loadData() {
-  console.log('Im trying to load some data');
+var loadData = function loadData(store) {
+  return store.dispatch((0, _index.fetchUsers)());
 };
 
 exports.loadData = loadData;
