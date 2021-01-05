@@ -181,6 +181,8 @@ var _reactRouterDom = __webpack_require__(6);
 
 var _reactRedux = __webpack_require__(11);
 
+var _reactRouterConfig = __webpack_require__(18);
+
 var _Routes = __webpack_require__(7);
 
 var _Routes2 = _interopRequireDefault(_Routes);
@@ -194,7 +196,11 @@ exports.default = function (req, store) {
     _react2.default.createElement(
       _reactRouterDom.StaticRouter,
       { location: req.path, context: {} },
-      _react2.default.createElement(_Routes2.default, null)
+      _react2.default.createElement(
+        'div',
+        null,
+        (0, _reactRouterConfig.renderRoutes)(_Routes2.default)
+      )
     )
   ));
 
@@ -496,6 +502,12 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, {
 /***/ (function(module, exports) {
 
 module.exports = require("babel-polyfill");
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-config");
 
 /***/ })
 /******/ ]);
